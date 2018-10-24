@@ -1,5 +1,6 @@
 /**
- * This component renders the Global navigation
+ * This component renders the Tool Navigation,
+ * present on each parent and teacher page
  */
 import { Component } from 'preact';
 import { Link } from 'preact-router/match';

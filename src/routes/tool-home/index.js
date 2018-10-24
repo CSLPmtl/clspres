@@ -1,10 +1,15 @@
+import { Component } from 'preact';
 import style from './style';
 
-const Home = () => (
-	<div class={style.home}>
-		<h1>Home</h1>
-		<p>This is the Home component.</p>
-	</div>
-);
+export default class ToolHome extends Component {
+	onComponentDidMount() {}
 
-export default Home;
+	render () {
+		return (
+			<div class={style.home}>
+				<h1>Home</h1>
+				<p>This is the Tool Home component.</p>
+			</div>
+		);
+	}
+}

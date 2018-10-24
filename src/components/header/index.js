@@ -1,19 +1,29 @@
 /**
  * This component renders the Global navigation
+ * This is _not_ the navigation between a tool's sub-pages
  */
 
-// import { Link } from 'preact-router/match';
+import { Component } from 'preact';
+import { Link } from 'preact-router/match';
 import style from './style';
 
-const Header = () => (
-	<header class={style.header}>
-		<h1>CSLP Resources</h1>
-		{/* <nav>
-			<Link activeClassName={style.active} href="/">Home</Link>
-			<Link activeClassName={style.active} href="/profile">Me</Link>
-			<Link activeClassName={style.active} href="/profile/john">John</Link>
-		</nav> */}
-	</header>
-);
+export default class Header extends Component {
+	constructor () {
+		super();
+		this.navElements = [{
+			label: 'ABRA',
+			route: '/abra'
+		}]; // axios.get('theme-settings');
+	}
 
-export default Header;
+	render () {
+		return (
+			<header class={style.header}>
+				<h1>CSLP Resources</h1>
+				<nav>
+					{ this.navElements.forEach(item => <Link href={item.route}>{item.label}</Link>) }
+				</nav>
+			</header>
+		);
+	}
+}
